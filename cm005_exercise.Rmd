@@ -126,8 +126,8 @@ p +
 What's wrong with the following code? Fix it.
 
 ```{r, fig.width = 5, fig.height = 2}
-ggplot(gapminder, aes(gdpPercap, lifeExp)) +
-  geom_point(x = gdpPercap, y = lifeExp, alpha = 0.1)
+ggplot(gapminder) +
+  geom_point(aes(x = gdpPercap, y = lifeExp), alpha = 0.1)
 ```
 
 
