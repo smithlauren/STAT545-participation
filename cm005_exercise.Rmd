@@ -84,9 +84,12 @@ Produce a line chart showing the concentration over time. Specifically, the plot
 
 Fill in the blanks to obtain the plot:
 
-```{r, fig.width = 5, fig.height = 2}
-ggplot(FILL_THIS_IN, aes(FILL_THIS_IN, FILL_THIS_IN)) +
-  FILL_THIS_IN()
+```{r, fig.width = 5, fig.height = 3}
+ggplot(mauna, aes(month, conc)) +
+  geom_line() +
+  xlab("Month") +
+  ylab("CO2 Concentration")
+  
 ```
 
 ### 2(b)
@@ -98,18 +101,24 @@ It turns out that you're allowed to specify the aesthetic mappings in a `geom` l
 
 The following code mistakenly puts the month variable on the y-axis. Fill in the `FILL_THIS_IN` so that you still obtain the same result as above.
 
-```{r, fig.width = 5, fig.height = 2}
+```{r, fig.width = 5, fig.height = 3}
 ggplot(mauna, aes(y = month)) +
-  geom_point(aes(FILL_THIS_IN))
+  geom_line(aes(month, conc)) +
+  xlab("Month") +
+  ylab("CO2 Concentration")
 ```
 
 ### 2(c)
 
 You can store the output of the plot in a variable, too. Store the plot from 2(a) in the variable named `p`, then add a layer to `p` that adds green points to the plot.
 
-```{r, fig.width = 5, fig.height = 2}
+```{r, fig.width = 6, fig.height = 4}
+p <- ggplot(mauna, aes(month, conc)) +
+  geom_line() +
+  xlab("Month") +
+  ylab("CO2 Concentration")
 p +
-  FILL_THIS_IN(colour = FILL_THIS_IN)
+  geom_point(colour = "green", alpha = 0.2)
 ```
 
 ### 2(d)
@@ -117,7 +126,7 @@ p +
 What's wrong with the following code? Fix it.
 
 ```{r, fig.width = 5, fig.height = 2}
-ggplot(gapminder) +
+ggplot(gapminder, aes(gdpPercap, lifeExp)) +
   geom_point(x = gdpPercap, y = lifeExp, alpha = 0.1)
 ```
 
