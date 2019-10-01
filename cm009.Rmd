@@ -32,18 +32,18 @@ lotr
 
 ```{r}
 (lotr_wide <- lotr %>% 
-  pivot_wider(FILL_THIS_IN = c(-Race, -Words), 
-              FILL_THIS_IN = Race, 
-              FILL_THIS_IN = Words))
+  pivot_wider(id_cols = c(-Race, -Words), 
+              names_from = Race, 
+              values_from = Words))
 ```
 
 3. Re-lengthen the wide LOTR data from Question 2 above.
 
 ```{r}
 lotr_wide %>% 
-  pivot_longer(FILL_THIS_IN = FILL_THIS_IN, 
-               names_to  = FILL_THIS_IN, 
-               values_to = FILL_THIS_IN)
+  pivot_longer(cols = c(-Film, -Gender), 
+               names_to  = "Race", 
+               values_to = "Words")
 ```
 
 ## Exercise 2: Multivariate Pivoting
@@ -59,9 +59,9 @@ guest %>%
 
 ```{r}
 (guest_long <- guest %>% 
-  pivot_longer(cols      = FILL_THIS_IN, 
-               names_to  = FILL_THIS_IN,
-               FILL_THIS_IN))
+  pivot_longer(cols      = c(-party, -name), 
+               names_to  = c(".value", "event"), #meal to retain column status, event to value in new column
+               names_sep = "_"))
 ```
 
 2. Use `tidyr::separate()` to split the name into two columns: "first" and "last". Then, re-unite them with `tidyr::unite()`.
