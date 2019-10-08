@@ -16,3 +16,10 @@ gapminder_sum %>%
   ggplot(aes(continent, ave_life)) +
   geom_point() +
   theme_bw()
+
+
+#read_csv can read from url, but read_excel
+data_url <- "http://gattonweb.uky.edu/sheather/book/docs/datasets/GreatestGivers.xls"
+download.file(url = data_url,
+              destfile = paste(here::here("cm011_test", "greatestGivers")))
+              
