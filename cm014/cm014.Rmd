@@ -121,13 +121,14 @@ ggplot(my_lm_resid, aes(.resid)) +
 ```
 
 
-
 We can use the `predict()` function to make predictions from the model (default is to use fitting/training data). Here are the predictions:
 
 ```{r}
-predict(my_lm) %>% 
+gapminder_France2 <- data.frame(year = seq(2000, 2005))
+predict(my_lm, newdata = gapminder_France2) %>% 
   head()
 ```
+
 Or we can predict on a new dataset:
 ```{r}
 years1 = FILL_THIS_IN
@@ -142,12 +143,13 @@ We can plot models (with one predictor/ X variable) using `ggplot2` through the 
 ```{r}
 ggplot(gapminder, aes(gdpPercap, lifeExp)) +
     geom_point() +
-    geom_smooth(method="lm") +
+    geom_smooth(method = "lm") +
     scale_x_log10()
 ```
 Lets consider another country "Zimbabwe", which has a unique behavior in the `lifeExp` and `year` relationship.
 ```{r}
-gapminder_Zimbabwe <- FILL_THIS_IN
+gapminder_Zimbabwe <- gapminder %>%
+  filter(country == "Zimbabwe")
 gapminder_Zimbabwe %>% ggplot(aes(year, lifeExp)) + geom_point()
 ```
 Let's try fitting a linear model to this relationship
@@ -156,8 +158,9 @@ ggplot(gapminder_Zimbabwe, aes(year,lifeExp)) + geom_point()+geom_smooth(method 
 ```
 Now we will try to fit a second degree polynomial and see what would that look like.
 ```{r}
-ggplot(FILL_THIS_IN) + geom_point()+geom_smooth(FILL_THIS_IN)
-
+ggplot(gapminder_Zimbabwe, aes(year, lifeExp)) + 
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ poly(I(x - 1952), degree = 2))
 ```
 
 ```{r}
