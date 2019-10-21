@@ -35,7 +35,7 @@ This repository is for in-class worksheets and exercises for STAT545 Fall 2019. 
 - [cm005_exercise.html](https://smithlauren.github.io/STAT545-participation/cm005/cm005_exercise.html)
  
  
-## [Class Meeting 6: dplyr](https://github.com/smithlauren/STAT545-participation/tree/master/cm006))
+## [Class Meeting 6: dplyr](https://github.com/smithlauren/STAT545-participation/tree/master/cm006)
 - [cm006-exercise.Rmd](https://github.com/smithlauren/STAT545-participation/blob/master/cm006/cm006-exercise.Rmd)
 - [cm006-exercise.html](https://smithlauren.github.io/STAT545-participation/cm006/cm006-exercise.html)
 
