@@ -15,16 +15,15 @@ This repository is for in-class worksheets and exercises for STAT545 Fall 2019. 
 ## [Class Meeting 3: Navigating Github and .Rmd Exploration](https://github.com/smithlauren/STAT545-participation/tree/master/cm003)
 **Note: I was unable to install LaTex on my computer so am unable to provide pdf versions.**
 
-### Navigating Github + markdown features
+#### Navigating Github + markdown features
 - [navigating_github_cm003.md](https://github.com/smithlauren/STAT545-participation/blob/master/cm003/navigating_github_cm003.md)
 - [navigating_github_cm003.html](https://smithlauren.github.io/STAT545-participation/cm003/navigating_github_cm003.html)
-### .Rmd Exploration
+#### .Rmd Exploration
 - [rmdexploration.rmd](https://github.com/smithlauren/STAT545-participation/blob/master/cm003/rmdexploration.Rmd)
 - [rmdexploration.html](https://smithlauren.github.io/STAT545-participation/cm003/rmdexploration.html)
 - [rmdexploration.md](https://github.com/smithlauren/STAT545-participation/blob/master/cm003/rmdexploration.md)
 - [rmdexplorationslides.rmd](https://github.com/smithlauren/STAT545-participation/blob/master/cm003/rmdexplorationslides.Rmd)
 - [rmdexplorationslides.html](https://smithlauren.github.io/STAT545-participation/cm003/rmdexplorationslides.html)
-- [rmdexplorationslides.md]
     
     
 ## Class Meeting 4
