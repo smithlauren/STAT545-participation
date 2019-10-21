@@ -2,9 +2,8 @@
 title: "Tibble Exploration"
 output: 
   html_document:
-      toc: true
-      number_sections: true
-      theme: cerulean
+    keep_md: true
+    theme: cerulean
 ---
 ```{r load, warning = FALSE, echo = FALSE}
 library(tibble)
