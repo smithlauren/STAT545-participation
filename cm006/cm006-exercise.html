@@ -366,7 +366,6 @@ summary {
 </div>
 
 
-<!---The following chunk allows errors when knitting--->
 <p><strong>Optional, but recommended startup</strong>:</p>
 <ol style="list-style-type: decimal">
 <li><p>Change the file output to both html and md <em>documents</em> (not notebook).</p></li>
@@ -437,7 +436,7 @@ select(gapminder, country:lifeExp)</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Select all variables, except <code>lifeExp</code>.</li>
 </ol>
-<pre class="r"><code>select(gapminder, -lifeExp)</code></pre>
+<pre class="r"><code>select(gapminder, -lifeExp) #don&#39;t need to write out all the columns that I don&#39;t want, just use -</code></pre>
 <pre><code>## # A tibble: 1,704 x 5
 ##    country     continent  year      pop gdpPercap
 ##    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;    &lt;int&gt;     &lt;dbl&gt;
@@ -832,21 +831,6 @@ gapminder %&gt;%
 <h2>git stuff (Optional)</h2>
 <p>Knit, commit, push!</p>
 </div>
-</div>
-<div id="bonus-exercises" class="section level1">
-<h1>Bonus Exercises</h1>
-<p>If there’s time remaining, we’ll practice with these three exercises. I’ll give you 1 minute for each, then we’ll go over the answer.</p>
-<ol style="list-style-type: decimal">
-<li><p>Take all countries in Europe that have a GDP per capita greater than 10000, and select all variables except <code>gdpPercap</code>. (Hint: use <code>-</code>).</p></li>
-<li><p>Take the first three columns, and extract the names.</p></li>
-<li><p>Of the <code>iris</code> data frame, take all columns that start with the word “Petal”.</p>
-<ul>
-<li>Hint: take a look at the “Select helpers” documentation by running the following code: <code>?tidyselect::select_helpers</code>.</li>
-</ul></li>
-<li><p>Convert the population to a number in billions.</p></li>
-<li><p>Filter the rows of the iris dataset for Sepal.Length &gt;= 4.6 and Petal.Width &gt;= 0.5.</p></li>
-</ol>
-<p>Exercises 3. and 5. are from <a href="https://www.r-exercises.com/2017/10/19/dplyr-basic-functions-exercises/">r-exercises</a>.</p>
 </div>
 
 

@@ -6,7 +6,6 @@ output:
 editor_options: 
   chunk_output_type: inline
 ---
-<!---The following chunk allows errors when knitting--->
 
 
 
@@ -106,11 +105,11 @@ select(gapminder, country:lifeExp)
 ```
 
 
-3. Select all variables, except `lifeExp`.
+3. Select all variables, except `lifeExp`.  
 
 
 ```r
-select(gapminder, -lifeExp)
+select(gapminder, -lifeExp) #don't need to write out all the columns that I don't want, just use -
 ```
 
 ```
@@ -635,19 +634,3 @@ These functions we've seen are called __vectorized functions__.
 
 Knit, commit, push!
 
-# Bonus Exercises
-
-If there's time remaining, we'll practice with these three exercises. I'll give you 1 minute for each, then we'll go over the answer.
-
-1. Take all countries in Europe that have a GDP per capita greater than 10000, and select all variables except `gdpPercap`. (Hint: use `-`).
-
-2. Take the first three columns, and extract the names.
-
-3. Of the `iris` data frame, take all columns that start with the word "Petal". 
-    - Hint: take a look at the "Select helpers" documentation by running the following code: `?tidyselect::select_helpers`.
-    
-4. Convert the population to a number in billions.
-
-5. Filter the rows of the iris dataset for Sepal.Length >= 4.6 and Petal.Width >= 0.5.
-
-Exercises 3. and 5. are from [r-exercises](https://www.r-exercises.com/2017/10/19/dplyr-basic-functions-exercises/).
