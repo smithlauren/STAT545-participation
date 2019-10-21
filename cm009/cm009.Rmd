@@ -1,7 +1,9 @@
 ---
-title: "cm009 Exercises: tidy data"
-output: html_notebook
-editor_options: 
+title: 'cm009 Exercises: tidy data'
+output:
+  html_document:
+    df_print: paged
+editor_options:
   chunk_output_type: inline
 ---
 
@@ -12,7 +14,6 @@ guest <- read_csv("https://raw.githubusercontent.com/STAT545-UBC/Classroom/maste
 email <- read_csv("https://raw.githubusercontent.com/STAT545-UBC/Classroom/master/data/wedding/emails.csv")
 ```
 
-<!---The following chunk allows errors when knitting--->
 
 ```{r allow errors, echo = FALSE}
 knitr::opts_chunk$set(error = TRUE, warning = FALSE)
