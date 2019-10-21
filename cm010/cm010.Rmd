@@ -15,15 +15,12 @@ install.packages("devtools")
 devtools::install_github("JoeyBernhardt/singer")
 ```
 
-Load required packages:
-
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
-library(tidyverse)
+library(tidyverse) # can we always load packages in in this chunk??
 library(singer)
 knitr::opts_chunk$set(fig.width=4, fig.height=3, warning = FALSE, fig.align = "center")
 ```
 
-<!---The following chunk allows errors when knitting--->
 
 ```{r allow errors, echo = FALSE}
 knitr::opts_chunk$set(error = TRUE)
@@ -45,6 +42,7 @@ The package `singer` comes with two smallish data frames about songs. Let's take
           song  = title))
 ```
 
+### note to self: guidebook has a link to really great graphics about different kinds of joins
 
 1. We really care about the songs in `time`. But, which of those songs do we know its corresponding album?
 
@@ -91,25 +89,25 @@ time %>%
 Load in the three Lord of the Rings tibbles that we saw last time:
 
 ```{r}
-fell <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Fellowship_Of_The_Ring.csv")
-ttow <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Two_Towers.csv")
-retk <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Return_Of_The_King.csv")
+fellow <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Fellowship_Of_The_Ring.csv")
+tower <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Two_Towers.csv")
+king <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Return_Of_The_King.csv")
 ```
 
 1. Combine these into a single tibble.
 
 ```{r}
-bind_rows(fell, ttow, retk)
+bind_rows(fellow, tower, king)
 ```
 
 2. Which races are present in "The Fellowship of the Ring" (`fell`), but not in any of the other ones?
 
 ```{r}
-fell %>% 
-  anti_join(ttow, by = "Race") %>% 
-  anti_join(retk, by = "Race")
+fellow %>% 
+  anti_join(tower, by = "Race") %>% 
+  anti_join(king, by = "Race")
 ```
-
+This means that all of the races in Fellowship are also in all of the other movies. 
 
 
 ## Exercise 3: Set Operations
