@@ -1,14 +1,16 @@
 ---
-title: "cm014 Worksheet: The Model-Fitting Paradigm in R"
-output: html_notebook
-editor_options: 
+title: 'cm014 Worksheet: The Model-Fitting Paradigm in R'
+output:
+  html_document:
+    df_print: paged
+editor_options:
   chunk_output_type: inline
 ---
 
 ```{r}
 suppressPackageStartupMessages(library(tidyverse))
-library(gapminder)
-library(broom)
+suppressPackageStartupMessages(library(gapminder))
+suppressPackageStartupMessages(library(broom))
 ```
 
 So you want to fit a model to your data. How can you achieve this with R?
@@ -32,8 +34,10 @@ Examples: Use the scatterplot below:
 library(tidyverse)
 ggplot(mtcars, aes(wt, mpg)) +
   geom_point() +
-  labs(x = "Weight (1000's of lbs)")
+  labs(x = "Weight (1000's of lbs)", y = "Miles per Gallon") # This graph shoes weight vs miles per gallon. From mtcars dataset
 ```
+
+
 
 Example: What can we say about rear axle ratio if we know something about quarter mile time?
 
@@ -41,8 +45,9 @@ Example: What can we say about rear axle ratio if we know something about quarte
 ggplot(mtcars, aes(qsec, drat)) + 
   geom_point() +
   labs(x = "Quarter mile time",
-       y = "Rear axle ratio")
+       y = "Rear axle ratio") # this shows qmt vs rear axle ratio, data from mtcars
 ```
+
 
 
 If EDA isn't enough, we can answer these questions by fitting a model: a curve that predicts Y given X. Aka, a __regression curve__ or a __machine learning model__. 
@@ -68,7 +73,7 @@ __Method__:
 
 A function such as:
 
-- Linear Regression: `lm`
+- Linear Regression: `lm` 
 - Generalized Linear Regression: `glm`
 - Local regression: `loess`
 - Quantile regression: `quantreg::rq`
@@ -87,7 +92,7 @@ Exercise:
 1. Fit a linear regression model to life expectancy ("Y") from year ("X") by filling in the formula. Notice what appears as the output.
 2. On a new line, use the `unclass` function to uncover the object's true nature: a list. Note: it might be easier to use the `names` function to see what components are included in the list. 
 
-First, create a subset of the `gapminder` dataset containing only the country of `France
+First, create a subset of the `gapminder` dataset containing only the country of `France`
 ```{r}
 (gapminder_France <- gapminder %>%
    filter(country == "France"))
@@ -117,7 +122,7 @@ summary(my_lm)
 ```{r, plot residuals}
 my_lm_resid <- augment(my_lm)
 ggplot(my_lm_resid, aes(.resid)) +
-  geom_freqpoly(binwidth = 0.5)
+  geom_freqpoly(binwidth = 0.5) # make sure not to do "bindwidth", makes graph really incorrect
 ```
 
 
@@ -154,22 +159,26 @@ gapminder_Zimbabwe %>% ggplot(aes(year, lifeExp)) + geom_point()
 ```
 Let's try fitting a linear model to this relationship
 ```{r}
-ggplot(gapminder_Zimbabwe, aes(year,lifeExp)) + geom_point()+geom_smooth(method = "lm", se = F)
+ggplot(gapminder_Zimbabwe, aes(year,lifeExp)) + geom_point()+geom_smooth(method = "lm", se = F) 
+# what does "se = F" mean... no explanation in class
 ```
 Now we will try to fit a second degree polynomial and see what would that look like.
 ```{r}
 ggplot(gapminder_Zimbabwe, aes(year, lifeExp)) + 
   geom_point() +
-  geom_smooth(method = "lm", formula = y ~ poly(I(x - 1952), degree = 2))
+  geom_smooth(method = "lm", formula = y ~ poly(I(x - 1952), degree = 2)) # use poly(I(x-____)) to shift x axis to 1952 instead of 0
 ```
 
+This is where we ended class. 
+
+
 ```{r}
-lm_linear <- lm(data = gapminder,formula = FILL_THIS_IN)
+lm_linear <- lm(data = gapminder,formula = FILL_THIS_IN) #did not go over this chunk in class
 lm_poly <- lm(data = gapminder,formula = FILL_THIS_IN))
 ```
 `anova` lets you compare between different models.
 ```{r}
-anova(lm_linear,lm_poly)
+anova(lm_linear,lm_poly) #did not go over this
 ```
 ## Regression with categorical variables
 
