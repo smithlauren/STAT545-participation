@@ -4,7 +4,7 @@ This repository is for in-class worksheets and exercises for STAT545 Fall 2019.
 
 Each folder corresponds to a class meeting and contains the in-class activitiess and/or exercises from the corresponding class.
 
-Below are links to class folder:
+Below are links to the class meeting folders:
 
 [Class Meeting 1](https://github.com/smithlauren/STAT545-participation/tree/master/cm001)
 
