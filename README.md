@@ -75,4 +75,4 @@ This repository is for in-class worksheets and exercises for STAT545 Fall 2019. 
 
 ## [Class Meeting 14: The Model-Fitting Paradigm in R](https://github.com/smithlauren/STAT545-participation/tree/master/cm014)
 - [cm014.Rmd](https://github.com/smithlauren/STAT545-participation/blob/master/cm014/cm014.Rmd)
-- [cm014.html](https://smithlauren.github.io/STAT545-participation/cm014/cm014.html)
+- [cm014.nb.html](https://smithlauren.github.io/STAT545-participation/cm014/cm014.nb.html)
