@@ -10,10 +10,10 @@ output:
 knitr::opts_chunk$set(error = TRUE)
 ```
 
-```{r}
+```{r, echo = FALSE}
 suppressPackageStartupMessages(library(gapminder))
 suppressPackageStartupMessages(library(forcats))
-suppressPackageStartupMessages(library(ggplot2)
+suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(tidyverse))
 ```
