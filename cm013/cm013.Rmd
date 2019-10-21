@@ -50,7 +50,7 @@ Write some notes here about what "effective visualizations" means to you. Think 
 >
 > Very strong, strong, weak, very week, do not know
 
-- <<Weak. The graphy doesn't show any types of errors which makes it hard to assess if the differences are actually significant. The data are visually skewed and it is hard to visualize the fact that the averages are not actually that far apart. We can't really assess if they are "more motivated".>>
+- <<Weak. The graph doesn't show any types of errors which makes it hard to assess if the differences are actually significant. The data are visually skewed and it is hard to visualize the fact that the averages are not actually that far apart. We can't really assess if they are "more motivated".>>
 
 - Main takeaway: Summarize the main takeaway from this question/discussion here
 
@@ -72,7 +72,7 @@ Write some notes here about what "effective visualizations" means to you. Think 
 
 - <<Very weak. Y-axis is flipped, so the graph actually shows that there was an increase in gun deaths. Should have made the color under the line rather than above. >>
 
-- Main takeaway: Summarize the main takeaway from this question/discussion here
+- Main takeaway: how you format axes is critically important and how you add color to graphs can make interpretation difficult.
 
 ## Part 2: Extracting insight from visualizations  [20 mins]
 
@@ -86,7 +86,7 @@ Great resource for selecting the right plot: https://www.data-to-viz.com/ ; enco
 
 We will be filling these principles in together as a class
 
-1. 
+1. we didn't end up doing this in class
 1. 
 1. 
 1. 
@@ -98,15 +98,14 @@ Instructions: Here is a code chunk that shows an effective visualization. First,
 
 How many of the principles did you manage to break?
 
+
+
 ## Plotly demo [10 mins]
 
 Did you know that you can make interactive graphs and plots in R using the plotly library? We will show you a demo of what plotly is and why it's useful, and then you can try converting a static ggplot graph into an interactive plotly graph.
 
 This is a preview of what we'll be doing in STAT 547 - making dynamic and interactive dashboards using R!
 
-```{r}
-install.packages('plotly')
-```
 
 ```{r}
 library(plotly)
