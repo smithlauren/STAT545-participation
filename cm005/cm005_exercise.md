@@ -6,10 +6,6 @@ output:
     theme: paper
 ---
 
-## Preliminary
-
-Begin by loading the required packages. If you don't have these installed (or don't know whether you have them installed), you can install them by executing the following code in your console:
-
 ```
 install.packages("tidyverse")
 install.packages("scales")
@@ -144,7 +140,7 @@ p <- ggplot(mauna, aes(month, conc)) +
   xlab("Month") +
   ylab("CO2 Concentration")
 p +
-  geom_point(colour = "green", alpha = 0.2)
+  geom_point(colour = "red", alpha = 0.2)
 ```
 
 <img src="cm005_exercise_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
@@ -156,10 +152,14 @@ What's wrong with the following code? Fix it.
 
 ```r
 ggplot(gapminder) +
-  geom_point(aes(x = gdpPercap, y = lifeExp), alpha = 0.1)
+  geom_point(aes(x = gdpPercap, y = lifeExp), alpha = 0.1, color = "red")
 ```
 
 <img src="cm005_exercise_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+
+
+__# This is where we ended class__
+
 
 
 ### 2(e) BONUS
